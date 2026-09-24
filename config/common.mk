@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
 ifeq ($(LINEAGE_BUILD),true)
 # This is Lineage!
 PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
+    vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.los.android.xml
 endif
 
 # Enforce privapp-permissions whitelist
@@ -163,16 +163,16 @@ endif
 
 ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
 PRODUCT_PACKAGES += \
-    LineageParts \
-    LineageSetupWizard
+    LosParts \
+    LosSetupWizard
 endif
 
 PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
+    LosSettingsProvider \
     Updater
 
 PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
+    vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.los-updater.rc
 endif
 
 # Extra tools in Lineage
