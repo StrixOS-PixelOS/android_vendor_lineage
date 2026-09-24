@@ -151,7 +151,7 @@ endif
 
 # Lineage interfaces
 PRODUCT_PACKAGES += \
-    framework_compatibility_matrix.los.xml
+    framework_compatibility_matrix.lineage.xml
 
 # Lineage packages
 ifeq ($(LINEAGE_BUILD),true)

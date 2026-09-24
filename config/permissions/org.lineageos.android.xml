@@ -16,5 +16,5 @@
 
 <!-- This feature shows that this is LineageOS -->
 <permissions>
-    <feature name="org.lineageos.android" />
+    <feature name="org.los.android" />
 </permissions>

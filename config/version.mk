@@ -1,11 +1,12 @@
 PRODUCT_VERSION_MAJOR = 24
 PRODUCT_VERSION_MINOR = 0
 
-ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
-else
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
-endif
+# ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
+#     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
+# else
+#     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
+# endif
+LINEAGE_BUILD_DATE := $(shell date -u +%y%m%d)
 
 # Set LINEAGE_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
@@ -29,7 +30,8 @@ ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
     endif
 endif
 
-LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
+# LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
+LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)
 
 # Internal version
 LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_VERSION_SUFFIX)
@@ -39,7 +41,7 @@ LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR)-$(LINEAGE_VERSION_SUFFIX)
 
 # LineageOS version properties
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
+    ro.los.version=$(LINEAGE_VERSION) \
+    ro.los.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.los.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.los.releasetype=$(LINEAGE_BUILDTYPE)

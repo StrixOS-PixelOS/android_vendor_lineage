@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
 
 # Legal
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.lineagelegal.url=https://lineageos.org/legal
+    ro.loslegal.url=https://legal.strixos.org
 
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -84,6 +84,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    LineageBlackTheme \
+    AndroidBlackTheme \
     ThemePicker \
     ThemesStub

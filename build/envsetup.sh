@@ -1022,3 +1022,5 @@ function build_kernel() {
     chmod -x "${target_kernel_dir}/"*
     echo "Kernel build output copied to ${target_kernel_dir}/"
 }
+
+. ${ANDROID_BUILD_TOP}/vendor/lineage/build/envsetup-strix.sh
